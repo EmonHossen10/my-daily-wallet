@@ -43,6 +43,9 @@ export default function Register() {
               <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" className="input input-bordered w-full" required minLength={6} />
               <button type="submit" className="btn btn-primary w-full">Register</button>
             </form>
+            <Link to="/" className="btn btn-ghost btn-sm w-full mt-1">
+              Back to homepage
+            </Link>
             <p className="text-sm mt-2">
               Have an account? <Link to="/login" className="link">Login</Link>
             </p>

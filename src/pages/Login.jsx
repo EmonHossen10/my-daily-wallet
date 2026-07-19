@@ -30,6 +30,9 @@ export default function Login() {
               <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" className="input input-bordered w-full" required />
               <button type="submit" className="btn btn-primary w-full">Login</button>
             </form>
+            <Link to="/" className="btn btn-ghost btn-sm w-full mt-1">
+              Back to homepage
+            </Link>
             <p className="text-sm mt-2">
               No account? <Link to="/register" className="link">Register</Link>
             </p>

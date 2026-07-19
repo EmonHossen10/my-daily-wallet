@@ -1,2 +1,35 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+@layer components {
+  .dashboard-shell {
+    background: radial-gradient(circle at 88% 3%, color-mix(in oklab, var(--color-primary) 16%, transparent), transparent 26rem),
+      linear-gradient(135deg, var(--color-base-200), var(--color-base-100) 48%, var(--color-base-200));
+  }
+
+  .dashboard-hero {
+    @apply relative overflow-hidden rounded-3xl p-6 sm:p-8 text-base-content;
+    background: linear-gradient(120deg, color-mix(in oklab, var(--color-primary) 18%, var(--color-base-100)), var(--color-base-100) 62%, color-mix(in oklab, var(--color-secondary) 15%, var(--color-base-100)));
+    border: 1px solid color-mix(in oklab, var(--color-primary) 15%, transparent);
+    box-shadow: 0 18px 50px color-mix(in oklab, var(--color-neutral) 10%, transparent);
+  }
+
+  .dashboard-hero::after { content: ""; position: absolute; width: 12rem; height: 12rem; right: -4rem; bottom: -7rem; border-radius: 9999px; background: color-mix(in oklab, var(--color-primary) 15%, transparent); }
+  .eyebrow { @apply uppercase tracking-[0.16em] text-[0.68rem] font-bold text-primary; }
+  .hero-total { @apply relative z-10 mt-6 inline-flex flex-col rounded-2xl px-5 py-3; background: color-mix(in oklab, var(--color-base-100) 72%, transparent); border: 1px solid color-mix(in oklab, var(--color-base-content) 10%, transparent); }
+  .hero-total span, .metric-label { @apply text-xs font-semibold uppercase tracking-wider text-base-content/55; }
+  .hero-total strong { @apply mt-1 text-2xl font-extrabold; }
+  .metric-card { @apply rounded-2xl p-5 transition-transform duration-200 hover:-translate-y-0.5; background: color-mix(in oklab, var(--color-base-100) 88%, transparent); border: 1px solid color-mix(in oklab, var(--color-base-content) 9%, transparent); box-shadow: 0 10px 25px color-mix(in oklab, var(--color-neutral) 6%, transparent); }
+  .metric-card-primary { background: linear-gradient(145deg, var(--color-primary), color-mix(in oklab, var(--color-primary) 75%, var(--color-secondary))); color: var(--color-primary-content); border-color: transparent; }
+  .metric-card strong { @apply block mt-2 text-3xl font-extrabold tracking-tight; }
+  .metric-card small { @apply mt-1 block text-sm opacity-65; }
+  .metric-card-primary .metric-label { color: color-mix(in oklab, var(--color-primary-content) 72%, transparent); }
+  .expense-form-card, .recent-panel { @apply rounded-2xl; background: color-mix(in oklab, var(--color-base-100) 90%, transparent); border: 1px solid color-mix(in oklab, var(--color-base-content) 9%, transparent); box-shadow: 0 12px 30px color-mix(in oklab, var(--color-neutral) 7%, transparent); }
+  .recent-panel { @apply p-5 sm:p-6; }
+  .recent-expense { @apply flex items-center gap-3 rounded-xl p-3; background: color-mix(in oklab, var(--color-base-200) 70%, transparent); }
+  .recent-expense-mark { @apply grid h-9 w-9 shrink-0 place-items-center rounded-xl text-sm font-bold text-primary; background: color-mix(in oklab, var(--color-primary) 14%, transparent); }
+  .recent-expense strong { @apply text-sm; }
+  .expense-card { @apply card transition-all duration-200 hover:-translate-y-1; background: color-mix(in oklab, var(--color-base-100) 92%, transparent); border: 1px solid color-mix(in oklab, var(--color-base-content) 9%, transparent); box-shadow: 0 10px 24px color-mix(in oklab, var(--color-neutral) 6%, transparent); }
+  .expense-card:hover { box-shadow: 0 16px 34px color-mix(in oklab, var(--color-primary) 12%, transparent); }
+  .empty-state { @apply rounded-2xl border border-dashed border-base-content/20 text-base-content/55; background: color-mix(in oklab, var(--color-base-100) 65%, transparent); }
+}

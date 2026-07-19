@@ -42,9 +42,10 @@ export default function ExpenseForm({ onSubmit, editing, onCancel }) {
   };
 
   return (
-    <div className="card bg-base-100 shadow mb-6">
-      <div className="card-body">
-        <h2 className="card-title">{editing ? "Update Expense" : "Add Expense"}</h2>
+    <div className="expense-form-card">
+      <div className="p-5 sm:p-6">
+        <p className="eyebrow">{editing ? "Editing entry" : "New transaction"}</p>
+        <h2 className="text-xl font-bold mb-5">{editing ? "Update your expense" : "Add an expense"}</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <input name="title" value={form.title} onChange={handleChange} placeholder="Title" className="input input-bordered w-full" required />
           <input name="amount" type="number" step="0.01" value={form.amount} onChange={handleChange} placeholder="Amount" className="input input-bordered w-full" required />
@@ -53,9 +54,9 @@ export default function ExpenseForm({ onSubmit, editing, onCancel }) {
           </select>
           <input name="expense_date" type="date" value={form.expense_date} onChange={handleChange} className="input input-bordered w-full" required />
           <textarea name="description" value={form.description} onChange={handleChange} placeholder="Description" className="textarea textarea-bordered w-full md:col-span-2" />
-          <div className="md:col-span-2 flex gap-2">
-            <button type="submit" className="btn btn-primary">{editing ? "Update" : "Add"}</button>
-            {editing && <button type="button" onClick={onCancel} className="btn">Cancel</button>}
+          <div className="md:col-span-2 flex gap-2 pt-1">
+            <button type="submit" className="btn btn-primary px-6">{editing ? "Save changes" : "Add expense"}</button>
+            {editing && <button type="button" onClick={onCancel} className="btn btn-ghost">Cancel</button>}
           </div>
         </form>
       </div>
